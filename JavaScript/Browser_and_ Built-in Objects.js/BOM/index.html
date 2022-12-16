@@ -1,0 +1,95 @@
+<!-- BOM (Window object)
+window.navigator
+Create a function that prints out in the console the following information
+● the platform on which the browser is running
+● the information about the browser version
+● the company that created that browser
+Each piece of information should be printed out in a new row.
+Create new “isOnline” function that checks if the browser is online.
+It should print out “online” when the browser is online and “offline” when there is
+no Internet connection.
+
+window.screen
+Create a function that prints out the following information in the console:
+● current browser width and height
+● max possible browser height
+
+window.location
+Write a function that prints out website’s url information in the console:
+
+● full url address
+● domain name
+● used protocol
+● parameters which are part of URL.
+Create a function for reloading the page.
+Create a function that redirects you to a website address passed to it.
+Test all three functions
+
+window.localStorage
+Create a function that stores passed data in the browser local storage.
+Create a function that reads the stored data, and print it out in console.
+If there is no data, print "There is no data" in the console.
+Create a function that removes data from the local storage.
+Use the previously created functions to store/read/remove some data.
+Then add some data in storage and close the browser.
+Open the browser again on the same page and use the function to read the
+stored value.
+Modify functions to work with sessionStorage instead of localStorage.
+Try same scenario as with localStorage to examine data livecycle.
+
+window.history
+Play around with the browser forward/back navigation.
+Implement a function that navigates two pages back.
+
+Window Methods
+
+● Create a function that shows the user a greeting message using alert
+● Then a question is presented to the user using prompt
+● When the user provides the answer, that answer is used in the confirm
+dialog
+● The format of the message in the dialog should be: "We will submit this
+answer now! " + the answer
+● If the user clicks OK, show alert with success message
+● If the user clicks Cancel, don&#39;t show anything -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript" src="./BOM.js"></script>
+
+    <style>
+      body{
+      background-color: plum;
+    }
+    h2{
+      margin: auto;
+      padding: 10px;
+      font-family:fantasy;
+      color:navy;
+    }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Click on the button below to get info about navigator</h4>
+    <input type="button" onclick="winNavigator()" value="Click Me" />
+    <br />
+
+    <h2>Click on the button below to get info is navigator online</h4>
+    <input type="button" onclick="navOnline()" value="Click Me" />
+
+    <h2>Click on the button below to get info about screen width and height</h4>
+    <input type="button" onclick="widthHeight()" value="Click Me" />
+
+    <h2>Click on the button below to reload the page</h4>
+    <input type="button" onclick="reloadPage()" value="Click Me" />
+
+    <h2>Click on the button below to go the google page</h4>
+    <input type="button" onclick="redirect()" value="Click Me" />
+
+  </body>
+</html>
