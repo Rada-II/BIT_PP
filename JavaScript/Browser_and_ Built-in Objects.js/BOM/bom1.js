@@ -10,7 +10,7 @@ function hostName() {
   console.log(`This is this website's url information:
   domain name is ${window.location.hostname}
   used protocol is ${window.location.protocol}
-  and these are parameters which are part of URL: ${window.location.search}
+  and these are parameters which are part of URL: ${window.location.pathname}
   full url address is ${window.location.href}`);
 }
 
