@@ -55,13 +55,13 @@ console.log(isWithinInterval(2020));
 /*e. Write a function named validator that returns an object with properties
 stringValidator, passwordValidator, colorValidator, and yearValidator referencing
 the functions from a) to d).*/
-function validator() {
+function validator(str,num) {
   return {
-    stringValidator: isAllCaps,
-    passwordValidator: hasDigits,
-    colorValidator: isValidHexColor,
-    yearValidator: isWithinInterval
+    stringValidator: isAllCaps(str),
+    passwordValidator: hasDigits(str),
+    colorValidator: isValidHexColor(str),
+    yearValidator: isWithinInterval(num)
   }
 }
 
-console.log(validator);
+console.log(validator('#FF0000', 2015));
