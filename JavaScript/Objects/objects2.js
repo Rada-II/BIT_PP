@@ -105,6 +105,24 @@ determineWhoCursedTheMost([{ me: 10, spouse: 5 }, { me: 5, spouse: 10 },
   
   console.log(determineWhoCursedTheMost([{me: 10, spouse: 5},  {me: 5, spouse: 10},   
     {me: 10, spouse: 10,}]));
+/*5. Create a function that converts color in RGB format to Hex format.
+Examples:
+rgbToHex({red: 0, green: 128,  blue: 192}) ➞ "#0080c0" */
+
+
+function ColorToHex(color) {
+  let hexadecimal = color.toString(16);
+  return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+}
+
+function ConvertRGBtoHex(red, green, blue) {
+  return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
+}
+console.log(ConvertRGBtoHex(0, 128, 192))
+
+
+
+
 
     /*6.	Create a function that takes an amount of monetary change 
 (e.g. 47 cents) and breaks down the most efficient way that change can be made using USD quarters, dimes, nickels 
