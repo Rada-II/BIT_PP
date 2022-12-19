@@ -2,6 +2,8 @@
 Input: 25 February
 Output: 5 days*/
 
+//KOMENTAR: Hardkodovala si vrednosti date1 i date2, tako da sta god da uneses kao argument u funkciju - uvek ces kao rezultat dobiti 5 dana :)
+
 function birthday(dateOne, dateTwo) {
   let date1 = new Date("02/20/2022");
   let date2 = new Date("02/25/2022");
