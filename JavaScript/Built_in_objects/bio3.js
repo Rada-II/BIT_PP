@@ -18,14 +18,38 @@ element. If the given array has an even number of elements, print out an error
 message.
 Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 Output: 4*/
+function countLessThanMiddle(arr) {
 
-function middleEl(arr) {
-  let result;
   if (arr.length % 2 === 0) {
-    return "Array has even number od elements!!";
-  } else {
-    result = arr.length / 2 + 0.5;
-    return result;
+    return ("Error: array has an even number of elements");
   }
+
+
+  let middleIndex = Math.floor(arr.length / 2);
+
+
+  let middleElement = arr[middleIndex];
+
+
+  let count = 0;
+
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < middleElement) {
+      count++;
+    }
+  }
+
+  return count;
 }
-console.log(middleEl([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+console.log(countLessThanMiddle([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+// function middleEl(arr) {
+//   let result;
+//   if (arr.length % 2 === 0) {
+//     return "Array has even number od elements!!";
+//   } else {
+//     result = arr.length / 2 + 0.5;
+//     return result;
+//   }
+// }
+// console.log(middleEl([-1, 8.1, 3, 6, 2.3, 44, 2.11])); //not good

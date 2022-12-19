@@ -53,7 +53,7 @@ function filterC (array, value, f) {
 }
 
 let outputC = filterC(arrayC, "di", findStringElement);
-let outputCtwo = filterC(array, 4, given);
+let outputCTwo = filterC(array, 4, given);
 
 console.log(outputC);
-console.log(outputCtwo);
+console.log(outputCTwo);

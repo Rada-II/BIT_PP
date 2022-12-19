@@ -9,6 +9,7 @@ function point(posX, posY, posZ) {
   return{x,y,z}
 }
 console.log(point(3,5,1));
+
 function calculateDistance(distance1, distance2) {
   let a = distance2.x - distance1.x;
   let b = distance2.y - distance1.y;

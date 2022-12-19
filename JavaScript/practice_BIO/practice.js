@@ -51,6 +51,37 @@ function middleEl(arr) {
   }
 }
 console.log(middleEl([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+/*b. Write a function that counts the number of elements less than the middle
+element. If the given array has an even number of elements, print out an error
+message.
+Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
+Output: 4*/
+function countLessThanMiddle(arr) {
+
+  if (arr.length % 2 === 0) {
+    console.error("Error: array has an even number of elements");
+    return;
+  }
+
+
+  const middleIndex = Math.floor(arr.length / 2);
+
+
+  const middleElement = arr[middleIndex];
+
+
+  let count = 0;
+
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < middleElement) {
+      count++;
+    }
+  }
+
+  return count;
+}
+console.log(countLessThanMiddle([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
 
 /*4. Write a function that finds the smallest element of a given array. The function should
 return an object that contains the smallest value and its last position in the array.
@@ -120,8 +151,8 @@ let string = "pro";
 let arrayC = ["director", "dictator", "doctor", "destructor"];
 
 
-function given (array, value) {
-  let output = array.filter(function(number) {
+function given(array, value) {
+  let output = array.filter(function (number) {
     return number < value;
   });
 
@@ -129,15 +160,15 @@ function given (array, value) {
 };
 
 /* b task */
-function findStringElement (array, string) {
+function findStringElement(array, string) {
   let output = [];
   let modArray = array.slice();
 
   modArray = modArray.map(function (value) {
     return value.toUpperCase();
   });
-  for(let i = 0; i < array.length; i++) {
-    if(modArray[i].slice(0, string.length) == string.toUpperCase()) {
+  for (let i = 0; i < array.length; i++) {
+    if (modArray[i].slice(0, string.length) == string.toUpperCase()) {
       output.push(array[i]);
     }
   }
@@ -146,7 +177,7 @@ function findStringElement (array, string) {
 };
 
 /* c task */
-function filterC (array, value, f) {
+function filterC(array, value, f) {
   return f(array, value);
 }
 
@@ -325,47 +356,47 @@ let time1 = "8:22:13";
 let time2 = "11:43:22";
 
 function calculateTimeBetweenTime2AndTime1(time1, time2) {
-   let time1Elements;
-   let time2Elements;
-   let differenceBetweenHours;
-   let differenceBetweenMinutes;
-   let differenceBetweenSeconds;
-   let differenceArray = [];
-   let hour;
-   let minutes;
-   let seconds;
-   let result;
+  let time1Elements;
+  let time2Elements;
+  let differenceBetweenHours;
+  let differenceBetweenMinutes;
+  let differenceBetweenSeconds;
+  let differenceArray = [];
+  let hour;
+  let minutes;
+  let seconds;
+  let result;
 
-    // Change string elements to array elements
-    time1Elements = time1.split(":");
-    time2Elements = time2.split(":");
+  // Change string elements to array elements
+  time1Elements = time1.split(":");
+  time2Elements = time2.split(":");
 
-    // Calculate difference between array elements
-    differenceBetweenHours = time2Elements[0] - time1Elements[0];
-    differenceBetweenMinutes = time2Elements[1] - time1Elements[1];
-    differenceBetweenSeconds = time2Elements[2] - time1Elements[2];
+  // Calculate difference between array elements
+  differenceBetweenHours = time2Elements[0] - time1Elements[0];
+  differenceBetweenMinutes = time2Elements[1] - time1Elements[1];
+  differenceBetweenSeconds = time2Elements[2] - time1Elements[2];
 
-    // Save value in new array
-    differenceArray = [differenceBetweenHours, differenceBetweenMinutes, differenceBetweenSeconds];
+  // Save value in new array
+  differenceArray = [differenceBetweenHours, differenceBetweenMinutes, differenceBetweenSeconds];
 
 
-    hour = parseInt(differenceArray[0]);
-    minutes = parseInt(differenceArray[1]);
-    seconds = parseInt(differenceArray[2]);
+  hour = parseInt(differenceArray[0]);
+  minutes = parseInt(differenceArray[1]);
+  seconds = parseInt(differenceArray[2]);
 
-    // Check relation between seconds, minutes and hours
-    if (seconds < 0) {
-        seconds = 60 + seconds;
-        minutes--;
-    }
-    if (minutes < 0) {
-        minutes = 60 + minutes;
-        hour--;
-    }
+  // Check relation between seconds, minutes and hours
+  if (seconds < 0) {
+    seconds = 60 + seconds;
+    minutes--;
+  }
+  if (minutes < 0) {
+    minutes = 60 + minutes;
+    hour--;
+  }
 
-    result = hour + ":" + minutes + ":" + seconds;
+  result = hour + ":" + minutes + ":" + seconds;
 
-    console.log(result);
+  console.log(result);
 }
 
 calculateTimeBetweenTime2AndTime1(time1, time2);
@@ -379,9 +410,9 @@ function point(posX, posY, posZ) {
   this.x = posX;
   this.y = posY;
   this.z = posZ;
-  return{x,y,z}
+  return { x, y, z }
 }
-console.log(point(3,5,1));
+console.log(point(3, 5, 1));
 function calculateDistance(distance1, distance2) {
   let a = distance2.x - distance1.x;
   let b = distance2.y - distance1.y;
@@ -392,8 +423,8 @@ function calculateDistance(distance1, distance2) {
 
 
 
-let distance1 = {x: 7, y: 2, z: 3};
-let distance2 = {x: 3, y: 5, z: 8};
+let distance1 = { x: 7, y: 2, z: 3 };
+let distance2 = { x: 3, y: 5, z: 8 };
 
 let distance = calculateDistance(distance1, distance2);
 
@@ -418,9 +449,9 @@ console.log(randomNumber2(50, 100));
 
 // let secPar = randomNumber(5, 20);
 // let num = 5;
-function generator (num,secPar){
+function generator(num, secPar) {
   //let newAr = [];
-   return Array.from(Array(num).keys(secPar))
+  return Array.from(Array(num).keys(secPar))
 }
 
 console.log(generator(5, randomNumber(5, 20)));
