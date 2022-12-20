@@ -2,10 +2,7 @@
 Input: 25 February
 Output: 5 days*/
 
-function birthday(dateOne, dateTwo) {
-  let date1 = new Date("02/20/2022");
-  let date2 = new Date("02/25/2022");
-
+function birthday(date1, date2) {
 
   let Difference_In_Time = date2.getTime() - date1.getTime();
 
@@ -19,6 +16,108 @@ function birthday(dateOne, dateTwo) {
                is ${Difference_In_Days} days!`;
 }
 console.log(birthday(new Date("02/20/2022"), new Date("02/25/2022")))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
