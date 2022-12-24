@@ -9,3 +9,4 @@ function reverseNum(num) {
 }
 
 console.log(typeof (reverseNum(12345)));
+// Nisi stampala reverse string Radoooooo!!! Radi ti sve kako treba, ali istampaj ga :D 
