@@ -61,3 +61,4 @@ let result = lowerCaseFirstLetter("The Quick Brown Fox");
 
 console.log(result);
 
+//Svaka cast za razlicite nacine rada. Koji ti se cinio najlaksi i najintuitivniji?
