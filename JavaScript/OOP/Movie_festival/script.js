@@ -531,11 +531,11 @@ Program to be announced */
     oct28.addMovie(darkTower);
     oct28.addMovie(dieHard1);
     oct28.addMovie(dieHard2);
-    oct28.addMovie(dieHard3);
+    // oct28.addMovie(dieHard3);
 
     oct29.addMovie(deadpool);
 
-    let weekendFestival = createFestival('Weekend festival', 16);
+    let weekendFestival = createFestival('Weekend festival', 'a16');
 
     weekendFestival.addProgram(oct28);
     weekendFestival.addProgram(oct29);
