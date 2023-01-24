@@ -82,95 +82,95 @@ Modify Passenger’s getData method to return full category name “business” 
 Add the total number of passengers in business category for each flight and the total number of
 business category passengers for the airport to final output. */
 
-// 'use strict';
-// (function () {
-//   function Person(name, surname) {
-//     this.name = name;
-//     this.surname = surname;
-//     this.getData = function () {
-//       return this.name + ' ' + this.surname;
-//     };
-//   }
-//   function Seat(number, category) {
-//     this.number = number || Math.floor(Math.random() * (100 - 10) + 10);
-//     this.category = category || 'e';
-//     this.getData = function () {
-//       return this.number + ', ' + this.category.toUpperCase();
-//     };
-//   }
-//   function Passenger(person, seat) {
-//     this.person = person;
-//     this.seat = seat;
-//     this.getData = function () {
-//       return this.seat.getData() + ', ' + this.person.getData();
-//     };
-//   }
-//   function Flight(relation, date) {
-//     this.relation = relation;
-//     this.date = new Date(date);
-//     this.passengers = [];
-//     this.addPassenger = function (passenger) {
-//       this.passengers.push(passenger);
-//     };
-//     this.getData = function () {
-//       let date =
-//         this.date.getDate() +
-//         '.' +
-//         (this.date.getMonth() + 1) +
-//         '.' +
-//         this.date.getFullYear();
+'use strict';
+(function () {
+  function Person(name, surname) {
+    this.name = name;
+    this.surname = surname;
+    this.getData = function () {
+      return this.name + ' ' + this.surname;
+    };
+  }
+  function Seat(number, category) {
+    this.number = number || Math.floor(Math.random() * (100 - 10) + 10);
+    this.category = category || 'e';
+    this.getData = function () {
+      return this.number + ', ' + this.category.toUpperCase();
+    };
+  }
+  function Passenger(person, seat) {
+    this.person = person;
+    this.seat = seat;
+    this.getData = function () {
+      return this.seat.getData() + ', ' + this.person.getData();
+    };
+  }
+  function Flight(relation, date) {
+    this.relation = relation;
+    this.date = new Date(date);
+    this.passengers = [];
+    this.addPassenger = function (passenger) {
+      this.passengers.push(passenger);
+    };
+    this.getData = function () {
+      let date =
+        this.date.getDate() +
+        '.' +
+        (this.date.getMonth() + 1) +
+        '.' +
+        this.date.getFullYear();
 
-//       let passengerData = '';
-//       this.passengers.forEach(function (passenger) {
-//         passengerData += '\t' + passenger.getData() + '\n';
-//       });
-//       return date + ', ' + this.relation + '\n' + passengerData;
-//     };
-//   }
-//   function Airport() {
-//     this.name = 'Nikola Tesla';
-//     this.flights = [];
-//     this.addFlight = function (flight) {
-//       this.flights.push(flight);
-//     };
+      let passengerData = '';
+      this.passengers.forEach(function (passenger) {
+        passengerData += '\t' + passenger.getData() + '\n';
+      });
+      return date + ', ' + this.relation + '\n' + passengerData;
+    };
+  }
+  function Airport() {
+    this.name = 'Nikola Tesla';
+    this.flights = [];
+    this.addFlight = function (flight) {
+      this.flights.push(flight);
+    };
 
-//     this.getData = function () {
-//       let totalPassengers = 0;
-//       let flightData = '';
-//       this.flights.forEach(function (flight) {
-//         totalPassengers += flight.passengers.length;
-//         flightData += flight.getData() + '\n';
-//       });
-//       return (
-//         'Airport: ' +
-//         this.name +
-//         ', total passengers: ' +
-//         totalPassengers +
-//         '\n' +
-//         flightData
-//       );
-//     };
-//   }
-//   let createFlight = function (relation, date) {
-//     return new Flight(relation, date);
-//   };
-//   let createPassenger = function (firstName, lastName, seatNumber, category) {
-//     let person = new Person(firstName, lastName);
-//     let seat = new Seat(seatNumber, category);
-//     return new Passenger(person, seat);
-//   };
-//   let airport = new Airport();
-//   let flight1 = createFlight('Belgrade - New York', 'Oct 25 2017');
-//   let flight2 = createFlight('Barcelona - Belgrade', 'Nov 11 2017');
-//   let passenger1 = createPassenger('John', 'Snow', 1, 'b');
-//   let passenger2 = createPassenger('Cersei', 'Lannister', 2, 'b');
-//   let passenger3 = createPassenger('Daenerys', 'Targaryen', 14);
-//   let passenger4 = createPassenger('Tyrion', 'Lannister');
-//   flight1.addPassenger(passenger1);
-//   flight1.addPassenger(passenger2);
-//   flight2.addPassenger(passenger3);
-//   flight2.addPassenger(passenger4);
-//   airport.addFlight(flight1);
-//   airport.addFlight(flight2);
-//   console.log(airport.getData());
-// })();
+    this.getData = function () {
+      let totalPassengers = 0;
+      let flightData = '';
+      this.flights.forEach(function (flight) {
+        totalPassengers += flight.passengers.length;
+        flightData += flight.getData() + '\n';
+      });
+      return (
+        'Airport: ' +
+        this.name +
+        ', total passengers: ' +
+        totalPassengers +
+        '\n' +
+        flightData
+      );
+    };
+  }
+  let createFlight = function (relation, date) {
+    return new Flight(relation, date);
+  };
+  let createPassenger = function (firstName, lastName, seatNumber, category) {
+    let person = new Person(firstName, lastName);
+    let seat = new Seat(seatNumber, category);
+    return new Passenger(person, seat);
+  };
+  let airport = new Airport();
+  let flight1 = createFlight('Belgrade - New York', 'Oct 25 2017');
+  let flight2 = createFlight('Barcelona - Belgrade', 'Nov 11 2017');
+  let passenger1 = createPassenger('John', 'Snow', 1, 'b');
+  let passenger2 = createPassenger('Cersei', 'Lannister', 2, 'b');
+  let passenger3 = createPassenger('Daenerys', 'Targaryen', 14);
+  let passenger4 = createPassenger('Tyrion', 'Lannister');
+  flight1.addPassenger(passenger1);
+  flight1.addPassenger(passenger2);
+  flight2.addPassenger(passenger3);
+  flight2.addPassenger(passenger4);
+  airport.addFlight(flight1);
+  airport.addFlight(flight2);
+  console.log(airport.getData());
+})();

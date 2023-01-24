@@ -40,6 +40,7 @@ function Developer(name, surname, job, salary, specialization) {
   this.specialization = specialization;
 }
 Developer.prototype = Object.create(Employee.prototype);
+
 Developer.prototype.getSpecialization = function () {
   console.log(`Specialization: ${this.specialization}`);
   return this;
