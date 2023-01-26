@@ -16,6 +16,7 @@
   function Seat(number, category) {
     this.number = number || Math.floor(Math.random() * (100 - 10) + 10);
     this.category = category || 'e';
+    return this;
   }
 
   // Seat getData method
@@ -44,6 +45,7 @@
   // Flight addPassenger method
   Flight.prototype.addPassenger = function (passenger) {
     this.passengers.push(passenger);
+    return this;
   };
 
   // Flight getData method
@@ -62,11 +64,13 @@
   function Airport() {
     this.name = 'Nikola Tesla';
     this.flights = [];
+    return this;
   }
 
   // Airport addFlight method
   Airport.prototype.addFlight = function (flight) {
     this.flights.push(flight);
+    return this;
   };
 
   // Airport getData method
