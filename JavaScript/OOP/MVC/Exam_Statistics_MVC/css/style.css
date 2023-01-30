@@ -1,0 +1,211 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #c1a4a4;
+  margin-top: 15px;
+  margin-top: 15px;
+}
+
+h2 {
+  text-align: center;
+  color: #9bbe93;
+  margin-top: 15px;
+  margin-top: 15px;
+}
+
+.container {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 15px auto;
+  border: 1px solid #12330d;
+}
+
+.header {
+  padding: 100px 0;
+  background-image: url('https://thumbs.dreamstime.com/z/report-card-close-up-desktop-mechanical-pencil-text-book-36075608.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div-paragraphs {
+  width: 250px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.div-paragraphs p {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+}
+
+#passed-students {
+  background: cadetblue;
+}
+
+#failed-students {
+  background: tomato;
+}
+
+#students-failed-span,
+#students-passed-span {
+  color: #ffff;
+}
+
+nav {
+  padding: 15px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+}
+nav input {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+#add-btn {
+  outline: none;
+  color: cadetblue;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.lists {
+  width: 50%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+}
+.lists-div {
+  flex-basis: 50%;
+}
+
+ul {
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+ul li {
+  padding: 7px;
+}
+
+li:nth-child(2n-1) {
+  background: #eee;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin-top: 15px;
+}
+
+h1 {
+  color: #ba8484;
+}
+
+h2 {
+  color: #395932;
+}
+
+.container {
+  width: 90%;
+  margin: 15px auto;
+  padding: 20px 10px;
+  /* border: 1px solid #12330d; */
+}
+
+.header {
+  padding: 100px 0;
+  background-image: url('https://thumbs.dreamstime.com/z/report-card-close-up-desktop-mechanical-pencil-text-book-36075608.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div-paragraphs {
+  width: 250px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.div-paragraphs p {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  color: #ccc;
+}
+
+#passed-students {
+  background: #5faaad;
+}
+
+#failed-students {
+  background: #e66953;
+}
+
+#students-failed-span,
+#students-passed-span {
+  color: #ffff;
+}
+
+nav {
+  padding: 15px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+}
+nav input {
+  margin: 0 10px;
+  padding: 5px;
+}
+#add-btn {
+  outline: none;
+  color: cadetblue;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.fail {
+  color: crimson;
+}
+
+.lists {
+  width: 50%;
+  margin: 15px auto;
+  display: flex;
+}
+.lists-div {
+  flex-basis: 50%;
+}
+
+ul {
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+ul li {
+  padding: 7px;
+}
+
+li:nth-child(odd) {
+  background: #eee;
+}

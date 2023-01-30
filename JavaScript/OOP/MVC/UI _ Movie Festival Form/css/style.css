@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 15px auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-weight: normal;
+  margin-top: 5px;
+}
+p {
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+fieldset {
+  padding-top: 20px;
+}
+label,
+input,
+select {
+  width: 99%;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+input,
+select {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+#movieGenre {
+  width: 99%;
+  margin: auto;
+}
+.create-movie-program-button,
+.create-program-button,
+.create-button {
+  background-color: #56c556;
+  color: #fff;
+  border: none;
+}

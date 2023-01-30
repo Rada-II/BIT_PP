@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Exam</title>
+  </head>
+  <body>
+    <!-- MAIN SECTION -->
+    <main class="container">
+      <header class="header">
+        <h1>Exam Statistic June</h1>
+        <h2>Total students: <span id="total-students-span">0</span></h2>
+
+        <div class="div-paragraphs">
+          <p id="passed-students">
+            <span>PASSED</span> <span id="students-passed-span">0</span>
+          </p>
+          <p id="failed-students">
+            FAILED <span id="students-failed-span">0</span>
+          </p>
+        </div>
+      </header>
+
+      <nav>
+        <select name="subject" id="subject" required>
+          <option value="" disabled selected hidden>subject</option>
+          <option value="js">JavaScript</option>
+          <option value="web">Web</option>
+          <option value="react">React</option>
+        </select>
+
+        <input
+          type="text"
+          id="name-lastName"
+          name="name-lastName"
+          placeholder="Name LastName"
+        />
+        <input
+          type="number"
+          min="0"
+          max="10"
+          id="grade"
+          name="grade"
+          placeholder="Grade"
+        />
+
+        <button id="add-btn">ADD</button>
+      </nav>
+
+      <div class="lists">
+        <div class="lists-div">
+          <h3>PASSED</h3>
+          <ul id="passed-list"></ul>
+        </div>
+        <div class="lists-div">
+          <h3 class="fail">FAILED</h3>
+          <ul id="failed-list"></ul>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/subject.js"></script>
+    <script src="js/exam.js"></script>
+    <script src="js/student.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
