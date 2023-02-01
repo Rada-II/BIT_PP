@@ -12,6 +12,8 @@ $(function () {
 
     let formData = collectFormData();
     let errors = validateFormData(formData);
+    let tempName = formData.name;
+    let words = tempName.split(' ');
 
     if (errors.length) {
       // Show the errors
@@ -20,7 +22,7 @@ $(function () {
     }
 
     let subject = new Subject(formData.subject);
-    let student = new Student(formData.name);
+    let student = new Student(words[0], words[1]);
     let exam = new Exam(subject, student, formData.grade);
 
     if (exam.hasPassed()) {

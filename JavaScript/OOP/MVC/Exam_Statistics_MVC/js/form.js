@@ -24,13 +24,6 @@ function validateFormData(data) {
   if (!data.grade || isNaN(data.grade) || data.grade < 1 || data.grade > 10) {
     errors.push('Please enter a valid grade between 1 and 10.');
   }
-  if (grade > 5) {
-    color = 'green';
-    float = 'right';
-  } else {
-    color = 'red';
-    float = 'right';
-  }
 
   if (!errors.length) {
     $('#subject').val('');
@@ -42,9 +35,17 @@ function validateFormData(data) {
 }
 
 function updateList(list, item) {
-  return $(`#${list}-list`).append(`<li>${item}</li>`);
+  const grade = item.slice(-1);
+  const subject = item.slice(0, -2);
+  let color = 'crimson';
+  if (grade > 5) {
+    color = 'cadetblue';
+  }
+
+  return $(`#${list}-list`).append(
+    `<li><span style="float: right; color: ${color};">${grade}</span>${subject}</li>`
+  );
 }
-//
 
 // Update the statistics in the page header
 function updateStatistics(passed, failed) {
