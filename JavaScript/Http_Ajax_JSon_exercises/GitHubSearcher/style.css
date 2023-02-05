@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 76%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header input {
+  width: 300px;
+  height: 24px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.user-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user-card {
+  width: 353px;
+  height: 303px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.user-avatar {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+
+.user-footer {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #949292;
+  margin: 20px;
+}
+
+img {
+  border: 1px solid #ccc;
+}
+hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
