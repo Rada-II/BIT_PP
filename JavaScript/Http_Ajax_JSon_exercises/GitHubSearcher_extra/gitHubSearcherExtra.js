@@ -20,7 +20,7 @@
 //               showUserRepos(user.login);
 //             });
 //           var userAvatar = $('<img>')
-//             .addClass('user-avatar')
+//             .addClass('user-symbol')
 //             .attr('src', user.avatar_url);
 //           var username = $('<span>').addClass('username').text(user.login);
 //           userCard.append(userAvatar, username);
@@ -87,7 +87,7 @@ $(function () {
               showUserRepos(user.login);
             });
           var userAvatar = $('<img>')
-            .addClass('user-avatar')
+            .addClass('user-symbol')
             .attr('src', user.avatar_url);
           var username = $('<span>').addClass('username').text(user.login);
           userCard.append(userAvatar, username);
