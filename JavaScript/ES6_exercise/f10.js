@@ -6,6 +6,8 @@ Output: no*/
 
 const isPosInt = arr => {
   for (let val of arr) {
+    //every method
+
     if (!Number.isInteger(val) || val <= 0) {
       return false;
     }
