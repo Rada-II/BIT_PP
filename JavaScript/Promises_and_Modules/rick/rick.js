@@ -30,8 +30,7 @@ const renderCharacterDetails = function (character) {
     <h4>${character.name}</h4>
     <img src="${character.image}" alt="${character.name} image">
     <p>Status: ${character.status}</p>
-    <p>Species: ${character.species}</p>
-    <p>Type: ${character.type}</p>
+    <p>Species: ${character.species}</p>  
     <p>Gender: ${character.gender}</p>
     <p>Origin: ${character.origin.name}</p>
     <p>Location: ${character.location.name}</p>
@@ -52,7 +51,8 @@ const renderCharacters = function (charactersToRender) {
       'col-md-6',
       'p-2',
       'd-flex',
-      'justify-content-center'
+      'justify-content-center',
+      'mb-4'
     );
 
     card.innerHTML = `
@@ -78,10 +78,9 @@ const renderCharacters = function (charactersToRender) {
   });
 };
 
-const setupPagination = function (characters) {
+const setupPagination = function (pageCount) {
   paginationContainer.innerHTML = '';
 
-  let pageCount = Math.ceil(characters.length / charactersPerPage);
   let currentPageIndex = currentPage - 1;
 
   let startPageIndex = currentPageIndex - 2;
@@ -102,10 +101,10 @@ const setupPagination = function (characters) {
   prevButton.classList.add('btn', 'btn-secondary', 'btn-previous', 'mx-1');
   prevButton.innerText = '<<';
   prevButton.disabled = currentPage === 1;
-  prevButton.addEventListener('click', () => {
+  prevButton.addEventListener('click', async function () {
     currentPage--;
-    renderCharacters(getCharactersToDisplay());
-    setupPagination(characters);
+    const data = await getCharactersPerPage(currentPage);
+    setupPagination(data.info.pages);
   });
   paginationContainer.appendChild(prevButton);
 
@@ -118,10 +117,10 @@ const setupPagination = function (characters) {
       button.classList.add('current-page');
     }
 
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async function () {
       currentPage = i + 1;
-      renderCharacters(getCharactersToDisplay());
-      setupPagination(characters);
+      const data = await getCharactersPerPage(currentPage);
+      setupPagination(data.info.pages);
     });
     paginationContainer.appendChild(button);
   }
@@ -130,54 +129,44 @@ const setupPagination = function (characters) {
   nextButton.classList.add('btn', 'btn-secondary', 'btn-next', 'mx-1');
   nextButton.innerText = '>>';
   nextButton.disabled = currentPage === pageCount;
-  nextButton.addEventListener('click', () => {
+  nextButton.addEventListener('click', async function () {
     currentPage++;
-    renderCharacters(getCharactersToDisplay());
-    setupPagination(characters);
+    const data = await getCharactersPerPage(currentPage);
+    setupPagination(data.info.pages);
   });
   paginationContainer.appendChild(nextButton);
 };
 
-const getCharactersToDisplay = function () {
-  let startIndex = (currentPage - 1) * charactersPerPage;
-  let endIndex = startIndex + charactersPerPage;
-
-  return characters.slice(startIndex, endIndex);
-};
-
-const fetchAllCharacters = async function () {
+async function getCharactersPerPage(page) {
   try {
     let allCharacters = [];
-    let page = 1;
 
-    while (true) {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character?page=${page}`
-      );
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character?page=${page}`
+    );
 
-      if (!response.ok)
-        throw new Error(`Problem with getting data ${response.status}`);
+    if (!response.ok)
+      throw new Error(`Problem with getting data ${response.status}`);
 
-      const data = await response.json();
-      allCharacters = allCharacters.concat(data.results);
+    const data = await response.json();
+    // console.log(data);
+    allCharacters = allCharacters.concat(data.results);
+    // console.log(allCharacters);
+    // console.log(data.info.pages);
 
-      if (data.info.next === null) {
-        break;
-      } else {
-        page++;
-      }
-    }
-
-    characters = allCharacters;
-    setupPagination(characters);
-    renderCharacters(getCharactersToDisplay());
+    renderCharacters(data.results);
+    return data;
   } catch (err) {
     console.error(`${err} 💥💥💥`);
     renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
   }
-};
+}
 
-fetchAllCharacters();
+async function initialPage() {
+  let initialData = await getCharactersPerPage(1);
+  setupPagination(initialData.info.pages);
+}
+initialPage();
 
 window.addEventListener('scroll', function () {
   var scrollTopBtn = document.getElementById('scroll-to-top');
@@ -197,7 +186,7 @@ window.addEventListener('scroll', function () {
 });
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 100, behavior: 'smooth' });
 }
 
 function scrollToBottom() {
